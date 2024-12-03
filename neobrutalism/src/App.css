@@ -1,0 +1,90 @@
+:root {
+    --text-color: #090909;
+    --background-color: #88aaee;
+    --base-background-color: #cfe4e5;
+    --text-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 4px 4px 0px 0px #000;
+    --timecycle-box-shadow: 1px 1px #090909;
+    --timeindex_task-background: #ff6868;
+    --timeindex_break-background: #78b9ff;
+    --button-active-background-color: #fff;
+    --button-active-box-shadow: 0 0 transparent, 0 0 transparent, 0 0 transparent, 0 0 transparent, 4px 4px 0px 0px transparent;
+    --anchor-color: #1a2cee;
+    color: var(--text-color);
+    background-color: var(--base-background-color);
+    text-shadow: var(--text-shadow);
+}
+
+.dark {
+    --text-color: #fff;
+    --background-color: #090909;
+    --base-background-color: #2e2e2e;
+    --text-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 4px 4px 0px 0px #fff;
+    --timecycle-box-shadow: 1px 1px #fff;
+    --timeindex_task-background: #b01a00;
+    --timeindex_break-background: #005bb0;
+    --button-active-background-color: #fff;
+    --button-active-box-shadow: 0 0 transparent, 0 0 transparent, 0 0 transparent, 0 0 transparent, 4px 4px 0px 0px transparent;
+    --anchor-color: #83b8e2;
+    color: var(--text-color);
+    background-color: var(--base-background-color);
+    text-shadow: var(--text-shadow);
+}
+
+.timer {
+    color: var(--text-color);
+    background: var(--base-background-color);
+    font-size: 96px;
+}
+
+.timecycle {
+    height: 20px;
+    margin: auto 2px;
+    border: 2px solid var(--text-color);
+    border-radius: 3px;
+    background: var(--base-background-color);
+    box-shadow: var(--timecycle-box-shadow);
+}
+
+.timeindex_task {
+    height: 20px;
+    margin: auto 2px;
+    border: 2px solid var(--text-color);
+    border-radius: 3px;
+    background: var(--timeindex_task-background);
+    box-shadow: var(--timecycle-box-shadow);
+}
+
+.timeindex_break {
+    height: 20px;
+    margin: auto 2px;
+    border: 2px solid var(--text-color);
+    border-radius: 3px;
+    background: var(--timeindex_break-background);
+    box-shadow: var(--timecycle-box-shadow);
+}
+
+button {
+    width: 144px;
+    color: var(--text-color);
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: var(--background-color);
+    border: 2px solid var(--text-color);
+    transition: all 0.3s;
+    box-shadow: var(--text-shadow);
+}
+
+button:hover {
+    box-shadow: var(--button-active-box-shadow);
+}
+
+button:active {
+    color: var(--background-color);
+    background: #fff;
+    box-shadow: var(--button-active-box-shadow);
+}
+
+a {
+    color: var(--anchor-color);
+}

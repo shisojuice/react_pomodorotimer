@@ -1,0 +1,58 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-width: 320px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 72px 1fr 48px;
+}
+
+header,
+footer,
+main {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 16px;
+}
+
+header {
+  justify-content: end;
+  margin: auto 16px;
+}
+
+footer {
+  font-size: 12px;
+}
+
+.themebtn {
+  width: 65px;
+  padding: 0.7em 0.7em;
+  font-size: 12px;
+}
+
+.cycle_expain {
+  text-align: center;
+  font-size: 15px;
+}
+
+.count {
+  display: flex;
+}
