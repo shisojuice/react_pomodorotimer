@@ -31,6 +31,14 @@ function App() {
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
   const [isActive, setIsActive] = useState(false);
+  const explain = timeIndex % 2 == 1 ? `Break ${timecycle[timeIndex] / 60}min.` : `Task ${timecycle[timeIndex] / 60}min.`
+
+  // Web Speech APIを設定
+  const utterance = new SpeechSynthesisUtterance();
+  utterance.lang = 'en-US';
+  utterance.volume = 1;
+  utterance.pitch = 1;
+  utterance.rate = 1;
 
   useEffect(() => {
     let interval = null;
@@ -45,10 +53,18 @@ function App() {
       setTimeLeft(timecycle[timeIndex]);
       clearInterval(interval);
     }
+    else if (isActive && timeLeft == 0) {
+      // Finish時に説明する
+      utterance.text = explain + ` Finished`;
+      speechSynthesis.speak(utterance);
+    }
     return () => clearInterval(interval);
   }, [isActive, timeLeft, timeIndex]);
 
   const handleStart = () => {
+    // Start時に説明する
+    utterance.text = explain;
+    speechSynthesis.speak(utterance);
     setIsActive(true);
   };
 
@@ -82,7 +98,7 @@ function App() {
             ))}
           </div>
           <br />
-          <span>{timeIndex % 2 == 1 ? `Break ${timecycle[timeIndex] / 60}min.` : `Task ${timecycle[timeIndex] / 60}min.`}</span>
+          <span>{explain}</span>
           <br />
           <span>1 cycle is 140min.</span>
         </div>
